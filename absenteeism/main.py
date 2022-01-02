@@ -55,19 +55,22 @@ class absenteeism_model():
         # drop the variables we decide we don't need
         df = df.drop(['Day of the Week','Daily Work Load Average','Distance to Work'],axis=1)
 
+        # we have included this line of code if you want to call the 'preprocessed data'
+        self.preprocessed_data = df[['reason 1', 'reason 2', 'reason 3', 'reason 4', 'Education',
+       'Transportation Expense', 'Age', 'Body Mass Index', 'Children', 'Pets',
+       'Month']].copy()
+
         # StandardScale numerical features
         X_unscaled = df[['Transportation Expense', 'Age', 'Body Mass Index', 'Children', 'Pets', 'Month']]
         X_scaled = self.scaler.transform(X_unscaled)
         df = df.drop(columns = ['Transportation Expense', 'Age', 'Body Mass Index', 'Children', 'Pets', 'Month'])
         df[['Transportation Expense', 'Age','Body Mass Index', 'Children','Pets', 'Month']] = X_scaled
 
-        # we need this line so we can use it in the next functions
-        self.data = df
-
         # reorder columns
         df = df[['reason 1', 'reason 2', 'reason 3', 'reason 4', 'Education',
        'Transportation Expense', 'Age', 'Body Mass Index', 'Children', 'Pets',
        'Month']]
+
 
         # we need this line so we can use it in the next functions
         self.data = df
@@ -90,6 +93,6 @@ class absenteeism_model():
     # add columns with these values at the end of the new data
     def predicted_outputs(self):
         if (self.data is not None):
-            Probability = self.reg.predict_proba(self.data)[:,1]
-            Prediction = self.reg.predict(self.data)
-            return Probability, Prediction
+            self.preprocessed_data['Probability'] = self.reg.predict_proba(self.data)[:,1]
+            self.preprocessed_data ['Prediction'] = self.reg.predict(self.data)
+            return self.preprocessed_data
