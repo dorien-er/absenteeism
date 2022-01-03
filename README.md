@@ -1,6 +1,6 @@
 # Data analysis
 - Project: Absenteeism on the workfloor
-- Description: Data Science/Analytics project integrating Python, SQL and Tableau. The impact of multiple factors including age and transportation cost, on absenteeism at work are analyzed.
+- Description: Data Science/Analytics project integrating Python, SQL and Tableau. Multiple factors, including illness and transportation cost, can result in increased absenteeism during the work hours. In this project, machine learning is applied to predict increased absenteeism.
 - Data Source: Absenteeism.CSV (from: https://www.udemy.com/course/python-sql-tableau-integrating-python-sql-and-tableau/)
 - Type of analysis: Data preprocessing (Python/SQL), Data Viz (Tableau/Python), Machine Learning, Prediction Pipeline and Module building
 
