@@ -1,10 +1,9 @@
 # Data analysis
-- Document here the project: absenteeism
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+- Project: Absenteeism on the workfloor
+- Description: Data Science/Analytics project integrating Python, SQL and Tableau. The impact of multiple factors including age and transportation cost, on absenteeism at work are analyzed.
+- Data Source: Absenteeism.CSV (from: https://www.udemy.com/course/python-sql-tableau-integrating-python-sql-and-tableau/)
+- Type of analysis: Data preprocessing (Python/SQL), Data Viz (Tableau/Python), Machine Learning, Prediction Pipeline and Module building
 
-Please document the project the better you can.
 
 # Startup the project
 
@@ -19,7 +18,7 @@ deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
 
 Unittest test:
 ```bash
-make clean install test
+make clean install
 ```
 
 Check for absenteeism in gitlab.com/{group}.
@@ -33,15 +32,6 @@ If your project is not set please add it:
 git remote add origin git@github.com:{group}/absenteeism.git
 git push -u origin master
 git push -u origin --tags
-```
-
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-absenteeism-run
 ```
 
 # Install
@@ -62,13 +52,6 @@ Clone the project and install it:
 git clone git@github.com:{group}/absenteeism.git
 cd absenteeism
 pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-absenteeism-run
+make clean install
+                # install
 ```
